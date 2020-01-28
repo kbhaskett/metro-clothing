@@ -7,7 +7,7 @@ import HomePage from "./pages/homepage";
 import ShopPage from "./pages/shopPage";
 import AuthPage from "./pages/authPage";
 import Header from "./components/header";
-import {setCurrentUser} from './redux/user.actions';
+import {setCurrentUser} from './redux/user/user.actions';
 
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 
@@ -52,8 +52,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = ({user}) => ({
-  currentuser: user.currentUser
+const mapStateToProps = ({user: {currentUser}}) => ({
+  currentUser
 });
 
 
